@@ -7,7 +7,7 @@ import { text } from 'stream/consumers';
 
 @Module({
   controllers: [InventoryController],
-  providers: [InventoryService], ...databaseProviders
+  providers: [InventoryService, ...databaseProviders]
 })
 export class InventoryModule {}
 

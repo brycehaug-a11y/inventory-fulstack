@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn } from "typeorm";
+import { CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { Column } from "typeorm/browser";
 
 @Entity()
@@ -28,9 +28,12 @@ stockQuantity!: number;
 @Column({type: "text"})
 availableMedium?: "Online" | "In-Store"
 
-@Column({type: "datetime", nullable:false, default: new Date()})
-createdAt!: Date;
+@Column({type:"boolean"})
+isActive!: boolean
 
-@Column({type: "datetime", nullable: false, default: new Date()})
-updatedAt!: Date;
+@CreateDateColumn()
+createAt!: Date
+
+@CreateDateColumn()
+updatedAt!: Date
 }
